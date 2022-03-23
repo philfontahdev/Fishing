@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fishing.App">
+    <Application.Resources>
+        <!--Colors-->
+        <Color x:Key="Background" >#12140c</Color>
+        <Color x:Key="Accent" >#BFE05F</Color>
+        <Color x:Key="BackgroundGradient" >#41433D</Color>
+        <Color x:Key="BodyText" >#797A76</Color>
+        
+    </Application.Resources>
+</Application>

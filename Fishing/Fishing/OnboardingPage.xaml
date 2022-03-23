@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:magic ="http://magic.com/schemas/gradients"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fishing.OnboardingPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="1.5*,1*">
+            <BoxView Color="Yellow"/>
+            
+            <magic:GradientGLView>
+                <magic:GradientCollection>
+                    <magic:RadialGradient x:Name="MyRadialGradient"  Center=".3,0" RadiusX="3000">
+                       
+                        <magic:GradientStop Color="Transparent" Offset="0"/>
+                        <magic:GradientStop Color="Transparent" Offset=".9"/>
+                        <magic:GradientStop Color="{StaticResource Background }" Offset="1"/>
+                    </magic:RadialGradient>
+                </magic:GradientCollection>
+            </magic:GradientGLView>
+            <BoxView Grid.Row="1" Color="Red"/>
+            <StackLayout  Grid.Row="1" VerticalOptions="End" Orientation="Vertical"  >
+                <Slider ValueChanged="Slider_ValueChanged" Minimum="0" Maximum="10" Value="1"/>
+            </StackLayout>
+
+            <BoxView x:Name="FadeBox" Opacity="0" Color="Black" InputTransparent="True"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
