@@ -1,27 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:magic ="http://magic.com/schemas/gradients"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fishing.OnboardingPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModels="clr-namespace:Fishing.ViewModels"
+             xmlns:models="clr-namespace:Fishing.Models" xmlns:magic1="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Fishing.OnboardingPage"
+             >
+    <ContentPage.BindingContext>
+        <viewModels:OnboardingViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="1.5*,1*">
             <BoxView Color="Yellow"/>
-            
-            <magic:GradientGLView>
-                <magic:GradientCollection>
-                    <magic:RadialGradient x:Name="MyRadialGradient"  Center=".3,0" RadiusX="3000">
-                       
-                        <magic:GradientStop Color="Transparent" Offset="0"/>
-                        <magic:GradientStop Color="Transparent" Offset=".9"/>
-                        <magic:GradientStop Color="{StaticResource Background }" Offset="1"/>
-                    </magic:RadialGradient>
-                </magic:GradientCollection>
-            </magic:GradientGLView>
-            <BoxView Grid.Row="1" Color="Red"/>
-            <StackLayout  Grid.Row="1" VerticalOptions="End" Orientation="Vertical"  >
-                <Slider ValueChanged="Slider_ValueChanged" Minimum="0" Maximum="10" Value="1"/>
-            </StackLayout>
+            <CarouselView Grid.Row="0" Grid.RowSpan="2" ItemsSource="{Binding Items}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="models:OnboardingModel">
+                        <Grid RowDefinitions="1.5*,1*" RowSpacing="0" >
+                            <StackLayout Grid.Row="1" Spacing="0">
+                                
+                                <Label FontFamily="BoldFont" Text="{Binding Title}"
+                                       LineHeight ="0"
+                                       Style = "{StaticResource OnboardingHeader}"/>
+                                
+                                <Label Text="{Binding Content}" FontFamily="SemiBoldFont" 
+                                       FontSize="16" MaxLines="2" 
+                                       Style="{StaticResource OnboardingContent}"/>
+                                <!--<Label Text="{Binding Image}" TextColor="White"/>-->
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
 
+            <magic1:GradientView>
+                <magic1:GradientCollection>
+                    <magic1:RadialGradient x:Name="MyRadialGradient"  Center=".3,0" RadiusX="3000">
+
+                        <magic1:GradientStop Color="Transparent" Offset="0"/>
+                        <magic1:GradientStop Color="Transparent" Offset=".9"/>
+                        <magic1:GradientStop Color="{StaticResource Background }" Offset="1"/>
+                    </magic1:RadialGradient>
+                </magic1:GradientCollection>
+            </magic1:GradientView>
+            <!--<BoxView Grid.Row="1" Color="{StaticResource Background}"/>-->
+            <StackLayout  Grid.Row="1" VerticalOptions="End" Orientation="Vertical"  >
+                <!--<Slider ValueChanged="Slider_ValueChanged" Minimum="0" Maximum="10" Value="1"/>-->
+            </StackLayout>
+            <Button Grid.Row="1"  Text="Thanks" VerticalOptions="End"/>
             <BoxView x:Name="FadeBox" Opacity="0" Color="Black" InputTransparent="True"/>
         </Grid>
     </ContentPage.Content>

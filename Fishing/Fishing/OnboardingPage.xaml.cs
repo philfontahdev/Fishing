@@ -17,6 +17,12 @@ namespace Fishing
         {
             InitializeComponent();
         }
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            MyRadialGradient.RadiusX = width *6;
+
+        }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {

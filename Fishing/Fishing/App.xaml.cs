@@ -2,6 +2,9 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("OpenSans-Bold.ttf", Alias ="BoldFont")]
+[assembly: ExportFont("OpenSans-Regular.ttf", Alias ="RegularFont")]
+[assembly: ExportFont("OpenSans-Semibold.ttf", Alias ="SemiBoldFont")]
 namespace Fishing
 {
     public partial class App : Application

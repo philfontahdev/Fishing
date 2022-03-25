@@ -8,6 +8,17 @@
         <Color x:Key="Accent" >#BFE05F</Color>
         <Color x:Key="BackgroundGradient" >#41433D</Color>
         <Color x:Key="BodyText" >#797A76</Color>
-        
+        <!--Styles-->
+        <Style x:Key="OnboardingHeader" TargetType="Label">
+            <Setter Property="TextColor" >White</Setter>
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontSize" >32</Setter>
+        </Style>
+        <Style x:Key="OnboardingContent" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource BodyText}"/>
+            <Setter Property="FontFamily" Value="SemiBoldFont"/>
+            <Setter Property="Margin" Value="20.0"/>
+            <Setter Property="FontSize" Value="30" />
+        </Style>
     </Application.Resources>
 </Application>
