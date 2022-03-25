@@ -8,12 +8,14 @@
         <viewModels:OnboardingViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="1.5*,1*">
+        <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="1.5*,1*" RowSpacing="0">
             <BoxView Color="Yellow"/>
             <CarouselView Grid.Row="0" Grid.RowSpan="2" ItemsSource="{Binding Items}">
                 <CarouselView.ItemTemplate>
                     <DataTemplate x:DataType="models:OnboardingModel">
                         <Grid RowDefinitions="1.5*,1*" RowSpacing="0" >
+
+                            <Image Source="{Binding Image}" Aspect="AspectFill"/>
                             <StackLayout Grid.Row="1" Spacing="0">
                                 
                                 <Label FontFamily="BoldFont" Text="{Binding Title}"
@@ -30,7 +32,7 @@
                 </CarouselView.ItemTemplate>
             </CarouselView>
 
-            <magic1:GradientView>
+            <magic1:GradientView Margin="0,0,0,-1">
                 <magic1:GradientCollection>
                     <magic1:RadialGradient x:Name="MyRadialGradient"  Center=".3,0" RadiusX="3000">
 

@@ -25,7 +25,7 @@ namespace Fishing.ViewModels
                  }, new OnboardingModel{
                      Title = "Find new fishing spots",
                      Content ="Bonnethead at puffer fish  pipefish octopus threadfin.Floating ",
-                     Image = "domiesharp.jpg"
+                     Image = "mathieu.jpg"
 
                  }, new OnboardingModel{
                      Title = "who is fishing near me",
