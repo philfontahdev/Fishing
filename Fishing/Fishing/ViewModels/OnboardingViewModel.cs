@@ -32,6 +32,11 @@ namespace Fishing.ViewModels
                      Content ="Gold damsel fauset snail, in snake eel sea coral grouper. M",
                      Image = "womanfish.jpg"
 
+                 }, new OnboardingModel{
+                     Title = "Find new fishing spots",
+                     Content ="Bonnethead at puffer fish  pipefish octopus threadfin.Floating ",
+                     Image = "mathieu.jpg"
+
                  }
             };
         }

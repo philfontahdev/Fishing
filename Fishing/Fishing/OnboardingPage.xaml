@@ -7,10 +7,37 @@
     <ContentPage.BindingContext>
         <viewModels:OnboardingViewModel/>
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style x:Key="IndicatorStyle"
+               TargetType="Image">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Source"
+                                        Value="circled" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="Source"
+                                        Value="star" />
+                                <Setter Property="Margin"
+                                        Value="5" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="1.5*,1*" RowSpacing="0">
             <BoxView Color="Yellow"/>
-            <CarouselView Grid.Row="0" Grid.RowSpan="2" ItemsSource="{Binding Items}">
+            <CarouselView Grid.Row="0" Grid.RowSpan="2" IndicatorView="indicatorView" ItemsSource="{Binding Items}">
                 <CarouselView.ItemTemplate>
                     <DataTemplate x:DataType="models:OnboardingModel">
                         <Grid RowDefinitions="1.5*,1*" RowSpacing="0" >
@@ -19,7 +46,7 @@
                             <StackLayout Grid.Row="1" Spacing="0">
                                 
                                 <Label FontFamily="BoldFont" Text="{Binding Title}"
-                                       LineHeight ="0"
+                                       LineHeight =".9"
                                        Style = "{StaticResource OnboardingHeader}"/>
                                 
                                 <Label Text="{Binding Content}" FontFamily="SemiBoldFont" 
@@ -46,8 +73,21 @@
             <StackLayout  Grid.Row="1" VerticalOptions="End" Orientation="Vertical"  >
                 <!--<Slider ValueChanged="Slider_ValueChanged" Minimum="0" Maximum="10" Value="1"/>-->
             </StackLayout>
-            <Button Grid.Row="1"  Text="Thanks" VerticalOptions="End"/>
-            <BoxView x:Name="FadeBox" Opacity="0" Color="Black" InputTransparent="True"/>
+
+            <Grid VerticalOptions="End" Margin="20" HeightRequest="50"
+                   ColumnDefinitions="*,*" Grid.Row="1">
+                <IndicatorView x:Name="indicatorView" HorizontalOptions="Start" IndicatorColor="Transparent" 
+                               SelectedIndicatorColor="Transparent">
+                    <IndicatorView.IndicatorTemplate>
+                        <DataTemplate>
+                            <Image Style="{StaticResource IndicatorStyle}"/>
+                        </DataTemplate>
+                    </IndicatorView.IndicatorTemplate>
+                </IndicatorView>
+
+            </Grid>
+            <!--<Button Grid.Row="1"  Text="Thanks" VerticalOptions="End"/>-->
+            <BoxView x:Name="FadeBox" Opacity="0" Color="Black" Grid.RowSpan="2" InputTransparent="True"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
