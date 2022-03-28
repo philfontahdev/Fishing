@@ -6,7 +6,7 @@
         <!--Colors-->
         <Color x:Key="Background" >#12140c</Color>
         <Color x:Key="Accent" >#BFE05F</Color>
-        <Color x:Key="BackgroundGradient" >#41433D</Color>
+        <Color x:Key="BackgroundGradient" >#272821</Color>
         <Color x:Key="BodyText" >#797A76</Color>
         <!--Styles-->
         <Style x:Key="OnboardingHeader" TargetType="Label">
@@ -19,6 +19,11 @@
             <Setter Property="FontFamily" Value="SemiBoldFont"/>
             <Setter Property="Margin" Value="20.0"/>
             <Setter Property="FontSize" Value="30" />
+        </Style>
+        <Style x:Key="SubHeader" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontFamily" Value="SemiBoldFont"/>
+            <Setter Property="FontSize" Value="7" />
         </Style>
     </Application.Resources>
 </Application>

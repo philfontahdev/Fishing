@@ -46,7 +46,7 @@
                             <StackLayout Grid.Row="1" Spacing="0">
                                 
                                 <Label FontFamily="BoldFont" Text="{Binding Title}"
-                                       LineHeight =".9"
+                                       LineHeight =".8"
                                        Style = "{StaticResource OnboardingHeader}"/>
                                 
                                 <Label Text="{Binding Content}" FontFamily="SemiBoldFont" 
@@ -84,6 +84,29 @@
                         </DataTemplate>
                     </IndicatorView.IndicatorTemplate>
                 </IndicatorView>
+                
+                    <Frame Grid.Column="1" CornerRadius="16" Padding="1">
+                        <Frame.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="{StaticResource BackgroundGradient }"/>
+                                <GradientStop Color="{StaticResource Background }"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+
+                        <Grid ColumnDefinitions="*,50">
+                        <Label Text="Explore" Margin="10" FontSize="12" VerticalOptions="Center" Style="{StaticResource SubHeader}" Grid.Column="0"/>
+                        <ImageButton HeightRequest="50"
+                                  HorizontalOptions="End"
+                                  CornerRadius="16"
+                                  Padding="14" 
+                                     Clicked="Button_Clicked"
+                                  BackgroundColor="{StaticResource Accent}"
+                                  Source="chevron2"
+                                  Grid.Column="1"
+                                  WidthRequest="50"/>
+                        </Grid>
+                </Frame>
+                
 
             </Grid>
             <!--<Button Grid.Row="1"  Text="Thanks" VerticalOptions="End"/>-->

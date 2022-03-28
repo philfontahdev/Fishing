@@ -27,7 +27,7 @@ namespace Fishing
         {
             if (e.Modal == onboardingpage)
             {
-                FadeBox.FadeTo(0, 1000);
+                FadeBox.FadeTo(0, 400);
                 onboardingpage = null;
                 App.Current.ModalPopping -= Current_ModalPopping;
             }
